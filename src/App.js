@@ -25,6 +25,10 @@ class App extends Component {
     })
   }
 
+  expandQuestion(id) {
+    console.log('Question id:', id)
+  }
+
   componentDidMount() {
     // when the component is loaded on the page, we will make an ajax request to fetch the questions
     this.getQuestions()
@@ -33,7 +37,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <QuestionList questions={this.state.questions} />
+        <QuestionList
+          questions={this.state.questions}
+          onClick={this.expandQuestion} />
       </div>
     );
   }
